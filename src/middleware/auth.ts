@@ -3,6 +3,7 @@ import jwt from 'jsonwebtoken';
 import { AppError } from '../utils/appError';
 
 export interface AuthRequest extends Request {
+  headers: any;
   user?: {
     id: string;
     businessId: string;
