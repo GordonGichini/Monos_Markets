@@ -3,7 +3,7 @@ import { SubscriptionTier } from '../../models/subscription';
 import { AppError } from '../../utils/appError';
 import db from '../../config/db';
 
-jest.mock('../../config/database');
+jest.mock('../../config/db');
 
 describe('PaymentService', () => {
   let paymentService: PaymentService;

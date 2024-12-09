@@ -5,6 +5,8 @@ import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
 import paymentRoutes from './routes/paymentRoutes';
 import { errorHandler } from './middleware/errorHandler';
+import db from './config/db';
+import logger from './utils/logger';
 
 dotenv.config();
 
@@ -29,9 +31,18 @@ app.use('/api/payments', paymentRoutes);
 // Error handling middleware
 app.use(errorHandler);
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
-
+// Database connection test
+db.connect()
+  .then(() => {
+    logger.info('Connected to the database successfully');
+    app.listen(port, () => {
+      logger.info(`Server running on port ${port}`);
+    });
+  })
+  .catch((error) => {
+    logger.error('Unable to connect to the database:', error);
+    process.exit(1);
+  });
+  
 export default app;
 
