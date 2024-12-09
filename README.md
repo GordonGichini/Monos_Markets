@@ -23,7 +23,7 @@ This project is a backend implementation for a payment system designed for a bus
 
 1. Clone the repository:
 
-git clone [https://github.com/yourusername/payment-backend.git](https://github.com/yourusername/payment-backend.git)
+git clone [https://github.com/GordonGichini/Monos_Markets/payment-module.git]
 cd payment-backend
 
 
