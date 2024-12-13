@@ -13,4 +13,6 @@ export interface Subscription {
     branchCount: number;
     startDate: Date;
     endDate: Date;
+    createdAt: Date;
+    updatedAt: Date;
 }

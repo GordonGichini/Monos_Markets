@@ -1,6 +1,10 @@
 export interface Payment {
-    id: string;
-    subscriptionId: string;
+    id: number;
+    subscriptionId: number;
     amount: number;
-    date: Date;
-}
+    stripePaymentIntentId: string;
+    paymentDate: Date;
+    paymentStatus: String;
+  }
+  
+  
